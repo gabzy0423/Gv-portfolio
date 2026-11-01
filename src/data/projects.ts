@@ -4,6 +4,10 @@ export const projects: Project[] = [
   {
     slug: "project-one",
     title: "Project title placeholder",
+    category: "Product platform",
+    image: "/images/projects/project-one-masonry.png",
+    imageWidth: 1122,
+    imageHeight: 1402,
     summary: "Replace this with a concise description of a project you want to feature.",
     description:
       "Add the problem, your approach, and the result here. Keep this description focused on the value you delivered and the decisions you made.",
@@ -14,6 +18,10 @@ export const projects: Project[] = [
   {
     slug: "project-two",
     title: "Another project placeholder",
+    category: "Fleet management",
+    image: "/images/projects/project-two-masonry.png",
+    imageWidth: 1122,
+    imageHeight: 820,
     summary: "Use this card for another product, experiment, or case study.",
     description:
       "Replace this placeholder with the context, implementation highlights, and impact of your second featured project.",
@@ -24,6 +32,10 @@ export const projects: Project[] = [
   {
     slug: "project-three",
     title: "Third project placeholder",
+    category: "Commerce platform",
+    image: "/images/projects/project-three-masonry.png",
+    imageWidth: 1122,
+    imageHeight: 1240,
     summary: "A final space for work that demonstrates a different part of your toolkit.",
     description:
       "Describe what made this project interesting, what you owned, and what you would improve next time.",
@@ -34,7 +46,39 @@ export const projects: Project[] = [
   {
     slug: "project-four",
     title: "Fourth project placeholder",
+    category: "Business system",
+    image: "/images/projects/project-four-masonry.png",
+    imageWidth: 1122,
+    imageHeight: 1000,
     summary: "Add another featured project, product, or case study here.",
+    description:
+      "Replace this placeholder with the project context, your contribution, implementation details, and outcome.",
+    role: "Your role here",
+    technologies: ["Technology", "Framework", "Tool"],
+    outcome: "Add the result, metric, or lesson learned here.",
+  },
+  {
+    slug: "project-five",
+    title: "Fifth project placeholder",
+    category: "Community platform",
+    image: "/images/projects/project-five-masonry.png",
+    imageWidth: 1122,
+    imageHeight: 1402,
+    summary: "A final project slot for another product, experiment, or case study.",
+    description:
+      "Replace this placeholder with the project context, your contribution, implementation details, and outcome.",
+    role: "Your role here",
+    technologies: ["Technology", "Framework", "Tool"],
+    outcome: "Add the result, metric, or lesson learned here.",
+  },
+  {
+    slug: "project-six",
+    title: "Sixth project placeholder",
+    category: "Developer tools",
+    image: "/images/projects/project-six-masonry.png",
+    imageWidth: 1122,
+    imageHeight: 860,
+    summary: "A temporary project slot for another product, experiment, or case study.",
     description:
       "Replace this placeholder with the project context, your contribution, implementation details, and outcome.",
     role: "Your role here",

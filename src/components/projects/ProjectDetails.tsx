@@ -1,15 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeftIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import type { Project } from "@/types/portfolio";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 export function ProjectDetails({ project }: { project: Project }) {
   return (
     <article className="mx-auto max-w-4xl px-6 py-16 lg:py-24">
-      <Link href="/projects" className="inline-flex items-center gap-2 font-pixel text-xs text-muted transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-        <ArrowLeftIcon aria-hidden="true" className="size-4" />
-        Back to projects
-      </Link>
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink
+              render={<Link href="/projects" />}
+              className="font-pixel text-xs font-bold text-muted transition-colors duration-300 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-background"
+            >
+              Projects
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage className="max-w-48 truncate font-pixel text-xs font-bold text-muted sm:max-w-none">{project.title}</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
 
       <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:gap-16">
         <div>

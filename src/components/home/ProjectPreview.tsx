@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/projects";
 
@@ -31,11 +30,7 @@ export function Projects() {
               href={`/projects/${project.slug}`}
               className={`group relative flex min-h-64 flex-col justify-end overflow-hidden rounded-2xl border border-line bg-surface p-5 transition-[border-color,transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-accent/60 hover:shadow-xl hover:shadow-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background ${size}`}
             >
-              {project.image ? (
-                <Image src={project.image} alt="" fill sizes="(min-width: 768px) 448px, 100vw" className="object-cover transition-transform duration-500 ease-out group-hover:scale-105" />
-              ) : (
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-surface to-background transition-transform duration-500 ease-out group-hover:scale-110" aria-hidden="true" />
-              )}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-surface to-background transition-transform duration-500 ease-out group-hover:scale-110" aria-hidden="true" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/45 to-transparent" aria-hidden="true" />
               <div className="relative z-10">
                 <div className="flex items-center justify-between gap-3">
