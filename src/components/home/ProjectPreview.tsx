@@ -30,8 +30,8 @@ export function Projects() {
               href={`/projects/${project.slug}`}
               className={`group relative flex min-h-64 flex-col justify-end overflow-hidden rounded-2xl border border-line bg-surface p-5 transition-[border-color,transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-accent/60 hover:shadow-xl hover:shadow-black/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background ${size}`}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-surface to-background transition-transform duration-500 ease-out group-hover:scale-110" aria-hidden="true" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/45 to-transparent" aria-hidden="true" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/20 via-surface to-background transition-transform delay-75 duration-700 ease-in-out group-hover:scale-[1.03] group-focus-visible:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none" aria-hidden="true" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/45 to-transparent" aria-hidden="true" />
               <div className="relative z-10">
                 <div className="flex items-center justify-between gap-3">
                   <span className="rounded-full border border-line bg-background/40 px-2.5 py-1 font-mono text-[10px] font-semibold text-accent backdrop-blur-sm">PROJECT 0{index + 1}</span>
