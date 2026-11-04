@@ -9,7 +9,7 @@ export function ProjectCard({ project }: { project: Project }) {
       href={`/projects/${project.slug}`}
       className="group block break-inside-avoid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-background"
     >
-      <Card className="rounded-xl border border-line bg-surface/60 py-0 text-foreground shadow-none ring-0 transition-[transform,box-shadow,border-color] duration-500 ease-out group-hover:-translate-y-1 group-hover:border-accent/50 group-hover:shadow-lg group-hover:shadow-black/10 group-focus-visible:-translate-y-1 group-focus-visible:border-accent/50 group-focus-visible:shadow-lg group-focus-visible:shadow-black/10 motion-reduce:transform-none motion-reduce:transition-none">
+      <Card className="rounded-xl border border-line bg-surface/60 py-0 text-foreground shadow-none ring-0 transition-[background-color,transform,box-shadow,border-color] duration-500 ease-out group-hover:bg-surface group-hover:-translate-y-1 group-hover:border-accent/50 group-hover:shadow-lg group-hover:shadow-black/10 group-focus-visible:bg-surface group-focus-visible:-translate-y-1 group-focus-visible:border-accent/50 group-focus-visible:shadow-lg group-focus-visible:shadow-black/10 motion-reduce:transform-none motion-reduce:transition-none">
         <CardContent className="p-0">
           <div className="p-3 pb-0">
             <div className="relative aspect-video overflow-hidden rounded-lg bg-surface shadow-lg ring-1 ring-foreground/10">
