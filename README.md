@@ -1,34 +1,128 @@
-This is a [Next.js](https://nextjs.org) personal portfolio starter using the App Router, TypeScript, and Tailwind CSS.
+# GV Portfolio
 
-## Getting Started
+Personal portfolio website of Gabriel Vargas - a software developer focused on building useful web applications, digital products, and practical systems.
 
-First, run the development server:
+[Live portfolio](http://localhost:3000) | [Projects](http://localhost:3000/projects) | [Contact](http://localhost:3000/contact)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Contents
+
+- [Purpose](#purpose)
+- [Tech stack](#tech-stack)
+- [What is included](#what-is-included)
+- [Project structure](#project-structure)
+- [Getting started](#getting-started)
+- [Available scripts](#available-scripts)
+- [Routes](#routes)
+
+## Purpose
+
+This portfolio is designed to present:
+
+- Selected software projects and case-study pages
+- Professional experience and education
+- Technology stack and development tools
+- GitHub contribution activity
+- Personal interests outside the IDE
+- Contact and collaboration details
+
+The visual direction is minimal, dark-first, and content-focused, with subtle motion, responsive layouts, and interactive project cards.
+
+## Tech stack
+
+| Area | Technologies |
+| --- | --- |
+| Framework | [Next.js](https://nextjs.org/) 16, React 19, App Router |
+| Language | TypeScript |
+| Styling | [Tailwind CSS](https://tailwindcss.com/) 4, CSS variables |
+| UI | [shadcn/ui](https://ui.shadcn.com/), Base UI, Heroicons, Lucide React |
+| Typography | Geist, Geist Mono, Geist Pixel Square |
+| Motion | CSS transitions, [Lenis](https://lenis.darkroom.engineering/) smooth scrolling |
+| Icons and logos | Simple Icons, SVG assets |
+| Deployment | [Vercel](https://vercel.com/) |
+
+## What is included
+
+- Responsive home page with hero, selected work, experience, tech stack, GitHub activity, outside-the-IDE gallery, and contact sections
+- Dedicated project index with responsive project cards
+- Dynamic project detail routes using project slugs
+- Light and dark theme support
+- Accessible keyboard focus states and reduced-motion fallbacks
+- Reusable layout, card, breadcrumb, navigation, and theme components
+- Centralized portfolio data in `src/data/`
+
+## Project structure
+
+<details>
+<summary>Expand the main folders</summary>
+
+```text
+src/
+├── app/              # App Router pages and route metadata
+├── components/       # Layout, home, project, experience, and UI components
+├── data/              # Projects, experience, education, skills, and technologies
+├── lib/               # Shared utilities and project helpers
+└── types/             # Shared TypeScript models
+
+public/
+├── images/            # Profile, gallery, project, and branding assets
+├── icons/             # Icon assets
+└── fonts/             # Local font assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+</details>
 
-Application code lives in `src/`, shared components live in `src/components/`, and portfolio content is kept in `src/data/`.
+## Getting started
 
-## Learn More
+### Requirements
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js 20 or newer
+- npm
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Install and run
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm install
+npm run dev
+```
 
-## Deploy on Vercel
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Production build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm run start
+```
+
+## Available scripts
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the local development server |
+| `npm run lint` | Run ESLint checks |
+| `npm run build` | Create a production build |
+| `npm run start` | Serve the production build locally |
+
+## Routes
+
+| Route | Purpose |
+| --- | --- |
+| `/` | Main portfolio page |
+| `/projects` | Selected projects gallery |
+| `/projects/[slug]` | Individual project detail page |
+| `/about` | About and education content |
+| `/contact` | Contact and collaboration details |
+
+## Content editing
+
+Most portfolio content can be updated without changing page components:
+
+- Projects: `src/data/projects.ts`
+- Experience: `src/data/experience.ts`
+- Education: `src/data/education.ts`
+- Technologies: `src/data/technologies.ts`
+- Gallery and project images: `public/images/`
+
+## License
+
+This is a personal portfolio project. Content, photographs, and personal branding assets are not licensed for reuse without permission.
