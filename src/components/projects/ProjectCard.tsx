@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { technologies } from "@/data/technologies";
 import type { Project } from "@/types/portfolio";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
+
+const projectCardTechnologies = technologies.filter(({ label }) =>
+  ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"].includes(label),
+);
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
@@ -28,17 +33,29 @@ export function ProjectCard({ project }: { project: Project }) {
           </div>
 
           <div className="p-4">
-            <CardTitle className="font-mono text-base font-semibold tracking-tight transition-colors duration-300 group-hover:text-accent sm:text-lg">
+            <CardTitle className="font-mono text-sm font-semibold tracking-tight transition-colors duration-300 group-hover:text-accent sm:text-base">
               {project.title}
             </CardTitle>
-            <p className="mt-2 line-clamp-2 text-sm leading-6 text-muted">{project.summary}</p>
-            <div className="mt-4 flex flex-wrap gap-2" aria-label="Technologies used">
-              {project.technologies.map((technology) => (
-                <span key={technology} className="rounded-md border border-line bg-background/60 px-2 py-1 font-pixel text-[10px] text-muted">
-                  {technology}
-                </span>
-              ))}
-            </div>
+            <p className="mt-2 line-clamp-2 text-xs leading-5 text-muted sm:text-sm">{project.summary}</p>
+            {project.slug === "project-one" ? (
+              <div className="mt-4 flex items-center gap-3" aria-label="Technologies used">
+                {projectCardTechnologies.map(({ label, icon }) => (
+                  <span key={label} title={label} aria-label={label} className="text-muted transition-colors duration-300 group-hover:text-foreground">
+                    <svg aria-hidden="true" className="size-5" viewBox="0 0 24 24" style={{ fill: `#${icon.hex}` }}>
+                      <path d={icon.path} />
+                    </svg>
+                  </span>
+                ))}
+              </div>
+            ) : (
+              <div className="mt-4 flex flex-wrap gap-2" aria-label="Technologies used">
+                {project.technologies.map((technology) => (
+                  <span key={technology} className="rounded-md border border-line bg-background/60 px-2 py-1 font-pixel text-[10px] text-muted">
+                    {technology}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
 
         </CardContent>

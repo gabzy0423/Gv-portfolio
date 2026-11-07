@@ -3,12 +3,12 @@ import type { Project } from "@/types/portfolio";
 export const projects: Project[] = [
   {
     slug: "project-one",
-    title: "Project title placeholder",
+    title: "DevCore — Digital Solutions Agency",
     category: "Product platform",
-    image: "/images/projects/project-one-masonry.png",
-    imageWidth: 1122,
-    imageHeight: 1402,
-    summary: "Replace this with a concise description of a project you want to feature.",
+    image: "/images/projects/DevCore Digital Products Showcase.png",
+    imageWidth: 1672,
+    imageHeight: 941,
+    summary: "A modern software agency website showcasing digital solutions and technical expertise.",
     description:
       "Add the problem, your approach, and the result here. Keep this description focused on the value you delivered and the decisions you made.",
     role: "Your role here",
