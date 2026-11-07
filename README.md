@@ -1,4 +1,16 @@
-# GV Portfolio
+<p align="center">
+  <img src="./public/images/branding/gv-favicon.svg" alt="GV logo" width="96" />
+</p>
+
+<h1 align="center">GV Portfolio</h1>
+
+<p align="center">A personal portfolio for software projects, systems, and ideas.</p>
+
+<p align="center">
+  <a href="http://localhost:3000/projects">Projects</a> |
+  <a href="http://localhost:3000/about">About</a> |
+  <a href="http://localhost:3000/contact">Contact</a>
+</p>
 
 Personal portfolio website of Gabriel Vargas - a software developer focused on building useful web applications, digital products, and practical systems.
 
@@ -39,6 +51,15 @@ The visual direction is minimal, dark-first, and content-focused, with subtle mo
 | Motion | CSS transitions, [Lenis](https://lenis.darkroom.engineering/) smooth scrolling |
 | Icons and logos | Simple Icons, SVG assets |
 | Deployment | [Vercel](https://vercel.com/) |
+
+### Core technologies
+
+[![Next.js](https://img.shields.io/badge/Next.js-111827?logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-149eca?logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06b6d4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-111827?logo=shadcnui&logoColor=white)](https://ui.shadcn.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-111827?logo=vercel&logoColor=white)](https://vercel.com/)
 
 ## What is included
 
