@@ -5,11 +5,13 @@ import { technologies } from "@/data/technologies";
 import type { Project } from "@/types/portfolio";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
-const projectDetailTechnologies = technologies.filter(({ label }) =>
-  ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"].includes(label),
-);
+const projectOneTechnologyLabels = ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"];
+const projectTwoTechnologyLabels = ["React.js", "JavaScript", "Vite", "Tailwind CSS"];
 
 export function ProjectDetails({ project }: { project: Project }) {
+  const iconTechnologyLabels = project.slug === "project-one" ? projectOneTechnologyLabels : project.slug === "project-two" ? projectTwoTechnologyLabels : [];
+  const detailTechnologies = technologies.filter(({ label }) => iconTechnologyLabels.includes(label));
+
   return (
     <article className="mx-auto max-w-4xl px-4 pb-16 pt-8 sm:px-6 lg:pb-24 lg:pt-12">
       <Breadcrumb>
@@ -57,9 +59,9 @@ export function ProjectDetails({ project }: { project: Project }) {
 
           <div className="border-t border-line pt-5">
             <p className="font-pixel text-xs text-muted">Technologies</p>
-            {project.slug === "project-one" ? (
+            {detailTechnologies.length > 0 ? (
               <div className="mt-3 flex flex-wrap items-center gap-2" aria-label="Technologies used">
-                {projectDetailTechnologies.map(({ label, icon }) => (
+                {detailTechnologies.map(({ label, icon }) => (
                   <span key={label} title={label} aria-label={label} className="grid size-9 place-items-center rounded-lg border border-line bg-background/60">
                     <svg aria-hidden="true" className="size-4.5" viewBox="0 0 24 24" style={{ fill: `#${icon.hex}` }}>
                       <path d={icon.path} />
@@ -85,9 +87,30 @@ export function ProjectDetails({ project }: { project: Project }) {
       </div>
 
       {project.image && (
-        <div className="relative mt-12 aspect-[16/9] overflow-hidden rounded-2xl border border-line bg-surface">
-          <Image src={project.image} alt={`${project.title} preview`} fill sizes="(min-width: 1024px) 896px, 100vw" className="object-cover" />
-        </div>
+        <figure className="mt-12">
+          <a
+            href={project.projectUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Visit ${project.title} website`}
+            className="group relative block overflow-hidden rounded-xl border border-line bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-background"
+            style={{ aspectRatio: project.imageWidth && project.imageHeight ? `${project.imageWidth} / ${project.imageHeight}` : "16 / 9" }}
+          >
+            <Image
+              src={project.image}
+              alt={`${project.title} preview`}
+              fill
+              sizes="(min-width: 1024px) 896px, 100vw"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+            />
+            <span className="absolute inset-0 grid place-items-center bg-black/0 text-sm font-semibold text-white opacity-0 transition duration-500 group-hover:bg-black/55 group-hover:opacity-100 group-focus-visible:bg-black/55 group-focus-visible:opacity-100">
+              Visit website
+            </span>
+          </a>
+          <figcaption className="mt-3 font-pixel text-xs text-muted">
+            {project.title} <span className="px-1 text-line">/</span> Frontend showcase
+          </figcaption>
+        </figure>
       )}
     </article>
   );

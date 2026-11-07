@@ -4,11 +4,16 @@ import { technologies } from "@/data/technologies";
 import type { Project } from "@/types/portfolio";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 
-const projectCardTechnologies = technologies.filter(({ label }) =>
-  ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"].includes(label),
-);
+const projectCardTechnologyLabels: Record<string, string[]> = {
+  "project-one": ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+  "project-two": ["React.js", "JavaScript", "Vite", "Tailwind CSS"],
+};
 
 export function ProjectCard({ project }: { project: Project }) {
+  const cardTechnologies = technologies.filter(({ label }) =>
+    projectCardTechnologyLabels[project.slug]?.includes(label),
+  );
+
   return (
     <Link
       href={`/projects/${project.slug}`}
@@ -37,9 +42,9 @@ export function ProjectCard({ project }: { project: Project }) {
               {project.title}
             </CardTitle>
             <p className="mt-2 line-clamp-2 text-xs leading-5 text-muted sm:text-sm">{project.summary}</p>
-            {project.slug === "project-one" ? (
+            {cardTechnologies.length > 0 ? (
               <div className="mt-4 flex items-center gap-3" aria-label="Technologies used">
-                {projectCardTechnologies.map(({ label, icon }) => (
+                {cardTechnologies.map(({ label, icon }) => (
                   <span key={label} title={label} aria-label={label} className="text-muted transition-colors duration-300 group-hover:text-foreground">
                     <svg aria-hidden="true" className="size-5" viewBox="0 0 24 24" style={{ fill: `#${icon.hex}` }}>
                       <path d={icon.path} />

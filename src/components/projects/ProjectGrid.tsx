@@ -30,9 +30,9 @@ export function ProjectGrid() {
         </p>
       </div>
 
-      <div className="mt-10 columns-1 gap-6 md:columns-2 lg:columns-3">
+      <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.slice(0, 6).map((project) => (
-          <div key={project.slug} className="mb-6 break-inside-avoid">
+          <div key={project.slug}>
             <ProjectCard project={project} />
           </div>
         ))}
