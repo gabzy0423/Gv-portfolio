@@ -6,7 +6,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbP
 
 export function ProjectDetails({ project }: { project: Project }) {
   return (
-    <article className="mx-auto max-w-4xl px-6 py-16 lg:py-24">
+    <article className="mx-auto max-w-4xl px-6 pb-16 pt-8 lg:pb-24 lg:pt-12">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -27,18 +27,18 @@ export function ProjectDetails({ project }: { project: Project }) {
       <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:gap-16">
         <div>
           <p className="font-pixel text-sm font-bold text-accent">Project case study</p>
-          <h1 className="mt-3 font-pixel text-4xl font-bold tracking-tight sm:text-6xl">{project.title}</h1>
-          <p className="mt-6 max-w-xl text-base leading-7 text-muted sm:text-lg">{project.description}</p>
+          <h1 className="mt-3 font-pixel text-3xl font-bold tracking-tight sm:text-4xl">{project.title}</h1>
+          <p className="mt-5 max-w-xl text-sm leading-6 text-muted sm:text-base">{project.description}</p>
           <a href={`mailto:gabrielvargas0423@gmail.com?subject=${encodeURIComponent(`Project inquiry: ${project.title}`)}`} className="mt-8 inline-flex min-h-11 items-center rounded-md bg-foreground px-5 py-3 text-sm font-semibold text-background transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background">
             Discuss a similar project
             <ArrowUpRightIcon aria-hidden="true" className="ml-3 size-4" />
           </a>
         </div>
 
-        <div className="grid gap-6 rounded-xl border border-line bg-foreground/[0.03] p-5 sm:p-6">
+        <div className="grid gap-5 rounded-xl border border-line bg-foreground/[0.03] p-4 sm:p-5">
           <div>
             <p className="font-pixel text-xs text-muted">Role</p>
-            <p className="mt-2 text-sm font-semibold">{project.role}</p>
+            <p className="mt-2 text-xs font-semibold sm:text-sm">{project.role}</p>
           </div>
           <div>
             <p className="font-pixel text-xs text-muted">Technologies</p>
@@ -50,7 +50,7 @@ export function ProjectDetails({ project }: { project: Project }) {
           </div>
           <div>
             <p className="font-pixel text-xs text-muted">Outcome</p>
-            <p className="mt-2 text-sm leading-6 text-muted">{project.outcome}</p>
+            <p className="mt-2 text-xs leading-5 text-muted sm:text-sm">{project.outcome}</p>
           </div>
         </div>
       </div>
