@@ -19,7 +19,7 @@ export function ProjectCard({ project }: { project: Project }) {
                   alt={`${project.title} project preview`}
                   fill
                   sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
-                  className="object-cover transition-transform delay-75 duration-700 ease-in-out group-hover:scale-[1.03] group-focus-visible:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
+                  className="object-cover transition-transform delay-100 duration-900 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03] group-focus-visible:scale-[1.03] motion-reduce:transform-none motion-reduce:transition-none"
                 />
               ) : (
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-surface to-background" aria-hidden="true" />

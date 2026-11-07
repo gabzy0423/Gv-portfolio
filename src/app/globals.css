@@ -156,9 +156,8 @@ body {
   font-family: var(--font-geist), var(--font-inter), system-ui, sans-serif;
 }
 
-body,
-body * {
-  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+body {
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 @keyframes tech-marquee {
