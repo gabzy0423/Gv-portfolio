@@ -10,10 +10,10 @@ export const projects: Project[] = [
     imageHeight: 941,
     summary: "A modern software agency website showcasing digital solutions and technical expertise.",
     description:
-      "Add the problem, your approach, and the result here. Keep this description focused on the value you delivered and the decisions you made.",
-    role: "Your role here",
+      "A frontend-focused presentation site for DevCore, designed to communicate its digital services through a clear, responsive interface and a polished visual system.",
+    role: "Frontend Dev",
     technologies: ["Technology", "Framework", "Tool"],
-    outcome: "Add a measurable outcome, launch detail, or key learning here.",
+    outcome: "A polished, responsive website that presents DevCore’s services and helps potential clients get in touch.",
   },
   {
     slug: "project-two",
