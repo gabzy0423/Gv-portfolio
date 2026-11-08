@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const interests = ["Outgoing", "Cat lover", "Family oriented", "Guitarist", "Jogger", "Nature lover"];
 
@@ -105,6 +105,27 @@ function GitHubHeatmap() {
 
 export function OutsideIde() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const heatmapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const heatmap = heatmapRef.current;
+    if (!heatmap) return;
+
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    const alignLatestContributions = () => {
+      if (mobileQuery.matches) heatmap.scrollLeft = heatmap.scrollWidth;
+    };
+
+    const observer = new ResizeObserver(alignLatestContributions);
+    observer.observe(heatmap);
+    alignLatestContributions();
+    mobileQuery.addEventListener("change", alignLatestContributions);
+
+    return () => {
+      observer.disconnect();
+      mobileQuery.removeEventListener("change", alignLatestContributions);
+    };
+  }, []);
 
   return (
     <section id="about" aria-labelledby="outside-ide-heading" className="mx-auto max-w-4xl px-6 pb-20 pt-20 lg:pb-28 lg:pt-24">
@@ -173,7 +194,7 @@ export function OutsideIde() {
           </a>
         </div>
 
-        <div data-lenis-prevent className="heatmap-scroll mt-6 overflow-x-auto rounded-2xl border border-dashed border-line bg-surface/60 p-5">
+        <div ref={heatmapRef} data-lenis-prevent className="heatmap-scroll mt-6 overflow-x-auto rounded-2xl border border-dashed border-line bg-surface/60 p-5">
           <GitHubHeatmap />
         </div>
       </div>
