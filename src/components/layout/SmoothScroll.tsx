@@ -6,7 +6,7 @@ import Lenis from "lenis";
 export function SmoothScroll() {
   useEffect(() => {
     const lenis = new Lenis({
-      autoRaf: true,
+      autoRaf: false,
       smoothWheel: true,
       lerp: 0.1,
       anchors: true,
@@ -14,7 +14,18 @@ export function SmoothScroll() {
       prevent: (node) => node.closest("[data-lenis-prevent]") !== null,
     });
 
-    return () => lenis.destroy();
+    let rafId = 0;
+    const raf = (time: number) => {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    };
+
+    rafId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
   }, []);
 
   return null;
