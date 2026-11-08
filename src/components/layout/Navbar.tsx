@@ -59,7 +59,7 @@ export function Navbar() {
     <header className="sticky top-0 z-30 border-b border-line bg-background/75 shadow-sm backdrop-blur-xl backdrop-saturate-150">
       <nav aria-label="Primary navigation" className="mx-auto flex min-h-10 max-w-4xl items-center justify-between gap-4 px-4 sm:min-h-16 sm:px-6">
         <Link href="/" className="shrink-0 font-mono text-base font-bold tracking-tight text-foreground" aria-label="GV home">
-          <Image src="/images/branding/gv-favicon.svg" alt="GV" width={28} height={28} className="size-7 rounded-md" priority />
+          <Image src="/images/branding/gv-favicon.svg" alt="GV" width={32} height={32} className="size-8 rounded-md sm:size-7" priority />
         </Link>
         <div className="flex items-center gap-2">
           <div className="hidden items-center gap-x-4 font-mono text-[13px] font-normal text-muted sm:flex md:gap-x-7">
