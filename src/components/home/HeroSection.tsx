@@ -4,7 +4,7 @@ import { EnvelopeIcon, MapPinIcon, RocketLaunchIcon } from "@heroicons/react/24/
 
 export function Hero() {
   return (
-    <section aria-labelledby="hero-title" className="mx-auto min-h-[calc(100svh-2.5rem)] max-w-4xl px-4 py-7 sm:min-h-0 sm:px-6 sm:py-10 lg:py-12">
+    <section aria-labelledby="hero-title" className="mx-auto max-w-4xl px-4 pb-7 pt-10 sm:px-6 sm:pb-10 sm:pt-12 lg:pb-12 lg:pt-14">
       <div className="flex items-start gap-4 sm:items-center sm:gap-6">
         <Image
           src="/images/profile/gab.jpg"
